@@ -1,0 +1,4 @@
+*.sh
+out
+*.mlir
+venv

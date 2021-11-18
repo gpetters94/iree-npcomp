@@ -1,0 +1,6 @@
+[submodule "external/iree"]
+	path = external/iree
+	url = https://github.com/google/iree.git
+[submodule "external/torch-mlir"]
+	path = external/torch-mlir
+	url = https://github.com/gpetters94/mlir-npcomp.git
