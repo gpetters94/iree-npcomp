@@ -8,6 +8,7 @@ yes | python -m pip uninstall torch torchvision
 python -m pip install --pre torch torchvision pybind11 -f https://download.pytorch.org/whl/nightly/cpu/torch_nightly.html
 
 pushd external/iree
+rm -rf build
 cmake -GNinja -Bbuild -S . \
   -DCMAKE_BUILD_TYPE=Debug \
   -DIREE_ENABLE_ASSERTIONS=ON \
@@ -20,6 +21,7 @@ cmake -GNinja -Bbuild -S . \
 popd
 
 pushd external/torch-mlir
+rm -rf build
 cmake -GNinja -Bbuild \
   -DCMAKE_C_COMPILER=clang \
   -DCMAKE_CXX_COMPILER=clang++ \
