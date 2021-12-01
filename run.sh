@@ -1,5 +1,10 @@
 #!/bin/bash
 
+SERIAL="$PWD/serialized_tests"
+pushd external/torch-mlir
+[[ -e "$SERIAL" ]] || build_tools/torchscript_e2e_heavydep_tests/generate_serialized_tests.sh "$SERIAL/venv" "$SERIAL/tests"
+popd
+
 source venv/bin/activate
 
 pushd external/torch-mlir
